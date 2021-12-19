@@ -4,15 +4,25 @@
   "description": "fork and queue utilities",
   "main": "dist/index.js",
   "author": "bejorock",
-  "repository": "https://github.com/bejorock/tinqjs-fork.git",
+  "repository": {
+    "type": "git",
+    "url": "https://github.com/bejorock/tinqjs-fork.git"
+  },
   "license": "MIT",
   "scripts": {
-    "build": "node esbuild.config.js"
+    "build": "node esbuild.config.js",
+    "package:push": "npm publish ./dist --access public"
   },
   "devDependencies": {
     "@types/node": "^17.0.0",
     "esbuild": "^0.14.5",
     "esbuild-node-externals": "^1.4.1",
     "npm-dts": "^1.3.10"
-  }
+  },
+  "keywords": [
+    "node",
+    "worker",
+    "fp",
+    "thread"
+  ]
 }

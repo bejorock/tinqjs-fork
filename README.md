@@ -13,7 +13,7 @@ Tiny libs to handle concurrency and threads in javascript. Simplifying javascrip
 ## Installation
 
 ```js
-npm install git+https://github.com/bejorock/tinqjs-fork.git
+npm install @tinqjs/tinjs-fork
 ```
 
 ## Documentations
