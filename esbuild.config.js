@@ -47,14 +47,22 @@ const files = ["src/index.ts", "src/example/runner.ts"];
 
 buildEsm(files)
   // .then(() => buildEsm(files))
-  /* .then(() =>
-    new Generator({
-      entry: "index.ts",
-      output: "dist/index.d.ts",
-    })
-      .generate()
-      .then(() => console.log("create index.d.ts"))
-  ) */
+  .then(() =>
+    Promise.all([
+      new Generator({
+        entry: "index.ts",
+        output: "dist/index.d.ts",
+      })
+        .generate()
+        .then(() => console.log("create index.d.ts")),
+      new Generator({
+        entry: "example/runner.ts",
+        output: "dist/example/runner.d.ts",
+      })
+        .generate()
+        .then(() => console.log("create example/runner.d.ts")),
+    ])
+  )
   .then(() =>
     fs.writeFileSync(
       "dist/package.json",
